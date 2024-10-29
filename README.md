@@ -1,1 +1,2 @@
-# mercury_homepage
+# Me
+SUI Testnet version

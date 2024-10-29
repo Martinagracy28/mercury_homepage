@@ -1,0 +1,111 @@
+/* Container for the entire app layout */
+#app-container {
+  display: flex;
+}
+
+/* Sidebar Styling */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--themeGray-900);
+  border-right: 1px solid var(--themeGray-600);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0; /* Add top and bottom padding */
+  overflow: hidden;
+  transition: width 0.2s;
+  z-index: 20;
+  justify-content: space-between; /* Space between logo and text */
+}
+
+
+.sidebarOpen {
+  width: 80px;
+  transition: width 0.2s;
+}
+
+
+.sidebarClose {
+  width: 0px;
+  transition: width 0.2s;
+}
+
+/* Arrow Button Positioning */
+
+
+.arrowButton {
+  position: fixed; /* Keep it fixed on scroll */
+  top: 50%; /* Center it vertically in the viewport */
+  left: 75px; /* Align it to the right edge of the sidebar */
+  transform: translateY(-50%); /* Center vertically based on its own height */
+  z-index: 30;
+  cursor: pointer;
+  transition: left 0.2s, transform 0.2s; /* Added transform transition */
+}
+
+/* .arrowPositionOpen { */
+  /* left: 75px; Positioned slightly outside the sidebar when open */
+  /* transform: translateY(0) rotate(0deg); Arrow facing right when sidebar is open */
+/* } */
+
+.arrowPositionOpen {
+  left: 56px;
+  transition: left 0.2s;
+}
+
+.arrowPositionClose {
+  left: -15px;
+  transition: left 0.2s;
+}
+
+/* Sidebar content styling */
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns text to the bottom */
+  width: 100%; /* Ensures full width */
+  margin-bottom: 20px; /* Space from bottom */
+}
+
+.sidebar-text {
+  transform: rotate(-90deg);
+  margin-bottom: 12px;
+  font-size: 2.5rem; /* Adjust the font size here */
+  font-weight: 900; /* Increase the font weight for bolder text */
+  color: white; /* Optional: Change color to white for better contrast */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Content area styling for right-side content */
+
+.content {
+  flex-grow: 1;
+  transition: margin-left 0.2s;
+  margin-left: 85px; /* Default width of sidebar when open */
+}
+
+.contentShifted {
+  margin-left: 80px; /* Shifts content to accommodate open sidebar */
+}
+
+.contentFullWidth {
+  margin-left: 0; /* Full width when sidebar is closed */
+}
+
+.vertical-line {
+  width: 2px; /* Adjust the width of the line */
+  background-color: white; /* Change color to white */
+  position: absolute; /* Use absolute positioning */
+  top: 0; /* Start from the top */
+  left: 80px; /* Position according to your sidebar width */
+  height: 100%; /* Full height of the sidebar */
+  z-index: 10; /* Make sure it's above other elements */
+}
+#wrapper {
+  display: flex;
+}
